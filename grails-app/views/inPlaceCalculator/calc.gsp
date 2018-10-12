@@ -12,12 +12,6 @@
         }
 
         document.addEventListener('DOMContentLoaded', attachValidator);
-
-        // ODER
-
-        var attachValidator = function() {
-           // code...
-        }();
     </script>
     --}%
 </head>
