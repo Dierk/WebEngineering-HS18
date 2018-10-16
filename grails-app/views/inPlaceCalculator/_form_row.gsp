@@ -1,5 +1,5 @@
 <%--
- Emitting a single row of a form with label an input field.
+ Emitting a single row of a form with label and input field.
  Params:
    name  : name to use for id, name, labelFor
    label : visible label
