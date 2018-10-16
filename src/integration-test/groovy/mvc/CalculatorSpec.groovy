@@ -23,7 +23,7 @@ class CalculatorSpec extends GebSpec {
 
         then: "Result Page is displayed"
         title == "Average"
-        $("output").text() == "placeholder goes here"
+        $("output").text() == "5.5"
 
 
         when: "click on back link"
