@@ -1,45 +1,29 @@
-<!doctype html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8"/>
+    <meta name="layout" content="form"/>
     <title>
         In-Place Calculator
     </title>
-    <style>
-    label { /* labels should go left of the input fields with fixed width such that the inputs align vertically */
-        display: block;
-        float: left;
-        clear: left;
-        width: 7em;
-    }
+    %{--
+    <script>
+        function attachValidator() {
+            document.getElementById('en').addEventListener('change', validate);
+            document.getElementById('exam').addEventListener('change', validate);
+        }
 
-    input {
-        display: block;
-        float: left;
-        clear: right;
-    }
-
-    .error { /* only change properties that do not change position or size. Keep the UI stable. */
-        border-color: red;
-    }
-
-    .padded { /* for vertical alignment of fieldset and result */
-        padding: 1em;
-        margin: 0px;
-    }
-    </style>
+        document.addEventListener('DOMContentLoaded', attachValidator);
+    </script>
+    --}%
 </head>
 
 <body>
 
-<h1>In-Place Calculator</h1>
-
 <form action="/inPlaceCalculator/calc" method="get">
     <fieldset class="form padded">
 
-        <tmpl:form_row name="en" label="En" calculatorInstance="${calculatorInstance}"/>
+        <tmpl:form_row name="en" label="En" model="${calculatorInstance}"/>
 
-        <tmpl:form_row name="exam" label="Exam" calculatorInstance="${calculatorInstance}"/>
+        <tmpl:form_row name="exam" label="Exam" model="${calculatorInstance}"/>
 
         <div>
             <label>&nbsp;</label>

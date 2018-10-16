@@ -16,7 +16,7 @@ class InPlaceCalculatorControllerSpec extends Specification implements Controlle
         model.result == result
         where:
         en  | exam | result
-        0.0 | 0.0  | "Cannot calculate. Exam value was invalid."
+        0.0 | 0.0  | "0"
         1.0 | 2.0  | "2"
         2.0 | 1.0  | "2"
         1.0 | 1.9  | "1"
