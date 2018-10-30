@@ -9,8 +9,8 @@ class MultiplicationCircleController {
         circleModel.lines = []
         for(int i = 0; i< circleModel.segmentCount; i++) {
             circleModel.lines.add( new Line (
-                x1: xValueOf(i, circleModel.segmentCount),
-                y1: yValueOf(i, circleModel.segmentCount),
+                x1: xValueOf(i,     circleModel.segmentCount),
+                y1: yValueOf(i,     circleModel.segmentCount),
                 x2: xValueOf(i * 2, circleModel.segmentCount), // todo: change according to the tableBase
                 y2: yValueOf(i * 2, circleModel.segmentCount)  // todo: change according to the tableBase
             ))
