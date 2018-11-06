@@ -23,7 +23,7 @@
                 return;
             }
             const pictureUrl = "http://static.flickr.com/" + photo.server + "/" + photo.id + "_" + photo.secret + "_m.jpg";
-            document.getElementById("target").innerHTML = "<img src='" + pictureUrl + "'><div> " + photo.title + "</div>";
+            document.getElementById("target").innerHTML = "<img src='" + pictureUrl + "'><div> " + photo.title + " loaded from " + pictureUrl + "</div>";
         }
 
         function findInterestingImages() {
