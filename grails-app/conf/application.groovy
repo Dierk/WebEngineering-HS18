@@ -34,21 +34,19 @@ grails.plugin.springsecurity.filterChain.chainMap = [
 // config types are 'Annotation', 'Requestmap', or 'InterceptUrlMap'
 grails.plugin.springsecurity.securityConfigType = 'InterceptUrlMap'
 grails.plugin.springsecurity.interceptUrlMap = statics + [
+	[pattern: "/static/**",  access: ["permitAll"]],
 	[pattern: "/login/auth", access: ["permitAll"]],
 	[pattern: "/person/**" , access: ['ROLE_ADMIN']], // cannot use constant here :-(
 	[pattern: "/room/**"   , access: ['ROLE_ADMIN']],
 
-    [pattern: "/calculator/*",           access: ['ROLE_ADMIN', 'ROLE_GUEST']], // secured for testing security
+    [pattern: "/calculator/*",              access: ['ROLE_ADMIN', 'ROLE_GUEST']], // secured for testing security
 
-//    [pattern: "/static/Calculator.html", access: ['permitAll']], // unsecured for ease of testing
-//    [pattern: "/calculator/**",           access: ['permitAll']],
-//
-//    [pattern: "/InPlaceCalculator.html" ,       access: ['permitAll']], // unsecured for ease of testing
-//    [pattern: "/inPlaceCalculator/**" ,          access: ['permitAll']],
-//   	[pattern: "/multiplicationCircle.html" ,    access: ['permitAll']],
-//   	[pattern: "/multiplicationCircle/**" ,       access: ['permitAll']],
-//   	[pattern: "/static/Temperatures.html",      access: ['permitAll']],
+    [pattern: "/InPlaceCalculator.html" ,   access: ['permitAll']], // unsecured for ease of testing
+    [pattern: "/inPlaceCalculator/**" ,     access: ['permitAll']],
+   	[pattern: "/multiplicationCircle.html", access: ['permitAll']],
+   	[pattern: "/multiplicationCircle/**" ,  access: ['permitAll']],
+   	[pattern: "/static/Temperatures.html",  access: ['permitAll']],
 
-//	[pattern: "/**",                            access: ['ROLE_ADMIN', 'ROLE_GUEST']], // default
-	[pattern: "/**",                            access: ['permitAll']], // default
+	[pattern: "/**",                         access: ['ROLE_ADMIN', 'ROLE_GUEST']], // default: all is secured
+//	[pattern: "/**",                         access: ['permitAll']],                // default: all is open
 ]
