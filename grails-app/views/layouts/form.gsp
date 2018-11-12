@@ -31,6 +31,15 @@
     ${System.getProperty('java.version')}
   Reloading:
     ${grails.util.Environment.reloadingAgentEnabled}
+   <sec:ifLoggedIn>
+     user: <sec:username/>
+     <g:link controller="logout">log out</g:link>
+   </sec:ifLoggedIn>
+   <sec:ifNotLoggedIn>
+     <g:link controller="login">log in</g:link>
+   </sec:ifNotLoggedIn>
+
+
   </footer>
 </g:if>
 </body>
