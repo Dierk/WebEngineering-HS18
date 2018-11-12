@@ -42,8 +42,6 @@ class InPlaceCalculatorSpec extends GebSpec {
             $("#exam").attr('class') == ""
     }
 
-// TODO: un-comment the commented lines below and see them failing, then make them pass
-
     void "Invalid input is handled in-place by JS without submission"() {
         given: "a valid state"
             browser.driver.javascriptEnabled = true
