@@ -12,7 +12,7 @@ class BootStrap {
     def init = { servletContext ->
 
         // in production or test, this might already be in the DB
-        SecRole adminRole = save(SecRole.findOrCreateWhere(authority: 'ROLE_ADMIN'))
+        SecRole adminRole = save(SecRole.findOrCreateWhere(authority: SecRole.ADMIN))
 
         if(Environment.current != Environment.DEVELOPMENT) { // guard clause
             return;
