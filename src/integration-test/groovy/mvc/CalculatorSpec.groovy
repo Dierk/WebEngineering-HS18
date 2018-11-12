@@ -11,17 +11,9 @@ class CalculatorSpec extends GebSpec {
 
     // Defines a when-then workflow
     void "Basic calculation with secured access"() {
-        when:
+        when: "go to openly accessible start page"
             go '/static/GradeCalculator.html'
-
-//        then: "security leads us to login" // uncomment if security is set to guest access
-//            title == "Login"
-//        when:
-//            $("form").username = "guest"
-//            $("form").password = "guest"
-//            $("input", type: "submit").click()
-
-        then: "successful login leads to requested page"
+        then:
             title == "Grade Calculator"
 
         when: "set valid input"
@@ -29,7 +21,14 @@ class CalculatorSpec extends GebSpec {
             $("form").exam = 6.0
             $("input", type: "submit").click()
 
-        then: "Result Page is displayed"
+        then: "security intercepts and leads us to login"
+            title == "Login"
+        when:
+            $("form").username = "guest"
+            $("form").password = "guest"
+            $("input", type: "submit").click()
+
+        then: "successful login leads to requested page"
             title == "Average"
             $("output").text() == "5.5"
 
@@ -40,7 +39,7 @@ class CalculatorSpec extends GebSpec {
             title == "Grade Calculator"
 
 
-//        when:
+//        when: // currently logout raises js errors when testing...
 //            go '/logout'
 //        then:
 //            title == 'Welcome to Grails'

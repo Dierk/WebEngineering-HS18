@@ -38,8 +38,7 @@ grails.plugin.springsecurity.interceptUrlMap = statics + [
 	[pattern: "/person/**" , access: ['ROLE_ADMIN']], // cannot use constant here :-(
 	[pattern: "/room/**"   , access: ['ROLE_ADMIN']],
 
-//    [pattern: "/static/Calculator.html", access: ['ROLE_ADMIN', 'ROLE_GUEST']], // secured for testing security
-//    [pattern: "/calculator/*",           access: ['ROLE_ADMIN', 'ROLE_GUEST']], // secured for testing security
+    [pattern: "/calculator/*",           access: ['ROLE_ADMIN', 'ROLE_GUEST']], // secured for testing security
 
 //    [pattern: "/static/Calculator.html", access: ['permitAll']], // unsecured for ease of testing
 //    [pattern: "/calculator/**",           access: ['permitAll']],
